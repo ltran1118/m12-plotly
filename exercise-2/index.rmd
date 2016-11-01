@@ -1,0 +1,29 @@
+---
+title: "index"
+name: "Linh Tran"
+output: html_document
+---
+install.packages('plot_ly')
+library(plot_ly)
+```{r echo=FALSE}
+the.summer <- c("ice cream", "smoothie", "sundae")
+price <- c(5, 3, 2.5)
+amount <- c(10, 9, 14)
+summer.table <- data.frame(the.summer, price, amount)
+
+chart <- plot_ly(summer.table, x = ~price, y = ~amount, type ='scatter',
+        mode = 'text', text = ~the.summer, textposition = 'middle left',
+        textfont = list(color = 'BLUE', size =16)) %>%
+        layout(tittle = 'The summer pack',
+        xaxis = list(tittle = 'price ($)',
+        zeroline = TRUE,
+        range = c(0,10)),
+        yaxis = list(title = 'the amount life',
+        range = c(0,20)))
+    
+  
+```
+
+'r chart'
+
+# Here it is again
